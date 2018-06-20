@@ -26,8 +26,11 @@ describe Test do
   end
 
   describe '#score' do
+    let(:test) { MockTest.new }
+    
     it 'returns the number of correct answers' do
-      test = MockTest.new
+
+      #test = MockTest.new
       expect(test.mock_score).to eq 3
     end
   end
