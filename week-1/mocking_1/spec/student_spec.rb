@@ -11,7 +11,7 @@ class MockFeedback
   end
 end
 
-class MockTest
+class MockTestScores
   def initialize(date_taken, answers)
     @date_taken = date_taken
     @answers = answers
@@ -42,7 +42,10 @@ describe Student do
   end
 
   describe '#happiness' do
+
+
     it 'returns the average happiness reported' do
+
       feedback_1 = MockFeedback.new(4, Date.today)
       feedback_2 = MockFeedback.new(4, Date.today)
       student = Student.new(feedbacks: [feedback_1, feedback_2])
@@ -57,8 +60,8 @@ describe Student do
 
   describe '#test_scores' do
     it 'returns all test scores' do
-      test_1 = MockTest.new(Date.today, [Answer.new(5, 5)])
-      test_2 = MockTest.new(Date.today, [Answer.new(6, 6)])
+      test_1 = MockTestScores.new(Date.today, [Answer.new(5, 5)])
+      test_2 = MockTestScores.new(Date.today, [Answer.new(6, 6)])
       student = Student.new(tests: [test_1, test_2])
 
       expect(student.test_scores).to eq({ "#{ Date.today.to_s }" => [1, 1] })
