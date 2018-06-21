@@ -8,7 +8,7 @@ class User
     @auth = Authentication.new
   end
 
-  def authenticate(password)
+  def authenticate
     auth.authenticate(password)
   end
 
