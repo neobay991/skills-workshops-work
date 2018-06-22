@@ -4,7 +4,7 @@ class ScrambledDiary
   end
 
   def to(comparison)
-    comparison.compare(@contents)
+    comparison.scramble(@contents)
   end
 end
 
@@ -12,7 +12,7 @@ class ScrambleByAdvancingChars
   def initialize(step)
     @step = step
   end
-  def compare(contents)
+  def scramble(contents)
     plain_chars = contents.chars
     scrambled_chars = plain_chars.map do |char|
       (char.ord + @step).chr
@@ -26,7 +26,7 @@ class UnScrambleByAdvancingChars
   def initialize(step)
     @step = step
   end
-  def compare(contents)
+  def scramble(contents)
     scrambled_chars = contents.chars
     plain_chars = scrambled_chars.map do |char|
       (char.ord - @step).chr
@@ -41,7 +41,7 @@ class ScrambleByReversing
     @step = step
   end
 
-  def compare(contents)
+  def scramble(contents)
     @contents = contents.reverse
     puts "Scrambled by reversing TEST to: #{@contents}"
   end
@@ -52,7 +52,7 @@ class UnScrambleByReversing
     @step = step
   end
 
-  def compare(contents)
+  def scramble(contents)
     @contents = contents.reverse
     puts "Unscrambled by reversing TSET to: #{@contents}"
   end
