@@ -3,6 +3,7 @@ class ScrambledDiary
     @contents = contents
   end
 
+  #replaced 'compare' method name with 'scramble'
   def to(comparison)
     comparison.scramble(@contents)
   end
@@ -70,13 +71,3 @@ class Tests
     ScrambledDiary.new("TSET").to(UnScrambleByReversing.new(3))
   end
 end
-
-
-
-# def scramble_by_reversing
-#   @contents = @contents.reverse
-# end
-#
-# def unscramble_by_reversing
-#   @contents = @contents.reverse
-# end
